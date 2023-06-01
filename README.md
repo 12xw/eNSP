@@ -1,3 +1,6 @@
+Target of penetration: Huawei Technology Co., Ltd
+Infiltration of assets: Huawei eNSP
+Affected version: Huawei eNSP V100R003C00SPC100
 DLL: eNSP_SimPC_Plugin.dll
 Affected Process: eNSP_Client.exe
 Tested on: Windows 10 Pro x64 
@@ -5,6 +8,9 @@ Tested on: Windows 10 Pro x64
 Description:
 NSP is a scalable and graphical network simulation tool platform provided by Huawei, mainly used for software simulation of enterprise network routers and switches, perfectly presenting real device scenarios and supporting large-scale network simulation, providing users with the opportunity to simulate and learn network technology without real devices.
 Huawei eNSP_ There is a security vulnerability in V100R003C00SPC100 version, which is caused by the program loading eNSP from the current working directory_ SimPC_ Plugin.dll file. Attackers can exploit this vulnerability to carry out DLL hijacking attacks.
+
+Reproduction ideas:
+When the administrator runs eNSP, it will call the eNSP named above_ SimPC_ Plugin.dll file, when we replace this file with a backdoor, we call the backdoor DLL to execute
 
 Steps to reproduce:
 1. Prepare a backdoor file called eNSP_ SimPC_ Plugin.dll
